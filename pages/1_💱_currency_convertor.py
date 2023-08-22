@@ -40,7 +40,7 @@ def main():
         response = requests.get(api_url, headers={'X-Api-Key': ''})
         data = response.json()
         if response.status_code == requests.codes.ok:
-            add_vertical_space(5)  #creates vertical space
+            #add_vertical_space(5)  #creates vertical space
             col1,col2=st.columns(2)
             with col1:
                 st.metric(data.get("old_currency"),data.get("old_amount"))
