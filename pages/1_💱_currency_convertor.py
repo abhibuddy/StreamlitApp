@@ -28,13 +28,13 @@ def main():
         description=f"Hey {user}!😀 This app will help you check how much amount you will get on converting a currency into other.",
         color_name="violet-70"
     )
-    with st.sidebar:
-        st.subheader("**Enter the values:**")
-        with st.form("currency convertor"):
-            current_currency=st.selectbox("select current currency: ", common_currency_codes,placeholder="select the currency")
-            convert_currency=st.selectbox("convert to currency: ", common_currency_codes,placeholder="select the currency")
-            amount=st.number_input("Amount: ")
-            submitted = st.form_submit_button("Submit")
+    
+    st.subheader("**Enter the values:**")
+    with st.form("currency convertor"):
+        current_currency=st.selectbox("select current currency: ", common_currency_codes,placeholder="select the currency")
+        convert_currency=st.selectbox("convert to currency: ", common_currency_codes,placeholder="select the currency")
+        amount=st.number_input("Amount: ")
+        submitted = st.form_submit_button("Submit")
     if submitted:
         api_url = f'https://api.api-ninjas.com/v1/convertcurrency?want={convert_currency}&have={current_currency}&amount={amount}'
         response = requests.get(api_url, headers={'X-Api-Key': ''})
