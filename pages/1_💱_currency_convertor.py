@@ -31,8 +31,11 @@ def main():
     
     st.subheader("**Enter the values:**")
     with st.form("currency convertor"):
-        current_currency=st.selectbox("select current currency: ", common_currency_codes,placeholder="select the currency")
-        convert_currency=st.selectbox("convert to currency: ", common_currency_codes,placeholder="select the currency")
+        col1,col2=st.columns(2)
+        with col1:
+            current_currency=st.selectbox("select current currency: ", common_currency_codes,placeholder="select the currency")
+        with col2:
+            convert_currency=st.selectbox("convert to currency: ", common_currency_codes,placeholder="select the currency")
         amount=st.number_input("Amount: ")
         submitted = st.form_submit_button("Submit")
     if submitted:
@@ -41,10 +44,10 @@ def main():
         data = response.json()
         if response.status_code == requests.codes.ok:
             #add_vertical_space(5)  #creates vertical space
-            col1,col2=st.columns(2)
-            with col1:
-                st.metric(data.get("old_currency"),data.get("old_amount"))
+            col1,col2,col3,col4=st.columns(4)
             with col2:
+                st.metric(data.get("old_currency"),data.get("old_amount"))
+            with col3:
                 st.metric(data.get("new_currency"),data.get("new_amount"))
         else:
             #print("Error:", response.status_code, response.text)
