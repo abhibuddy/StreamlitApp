@@ -10,9 +10,9 @@ import requests
 
 #methods
 common_currency_codes = (
-    'USD', 'EUR', 'JPY', 'GBP', 'AUD', 'CAD', 'CHF', 'CNY', 'SEK', 'NZD',
-    'MXN', 'SGD', 'HKD', 'NOK', 'KRW', 'TRY', 'RUB', 'INR', 'BRL', 'ZAR',
-    'SAR', 'AED', 'THB', 'PLN', 'DKK', 'MYR', 'IDR', 'TWD', 'QAR', 'COP',
+    'QAR', 'INR', 'JPY', 'GBP', 'AUD', 'CAD', 'CHF', 'CNY', 'SEK', 'NZD',
+    'MXN', 'SGD', 'HKD', 'NOK', 'KRW', 'TRY', 'RUB', 'EUR', 'BRL', 'ZAR',
+    'SAR', 'AED', 'THB', 'PLN', 'DKK', 'MYR', 'IDR', 'TWD', 'USD', 'COP',
     'ARS', 'CLP', 'PHP', 'CZK', 'EGP', 'ILS', 'KWD', 'HUF', 'NGN', 'RON'
 )
 
